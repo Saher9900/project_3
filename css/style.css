@@ -88,11 +88,11 @@ body {
     padding: 0 10px;
     overflow-x: hidden;
   }
-  
+
   body {
     overflow-x: hidden;
   }
-  
+
   html {
     overflow-x: hidden;
   }
@@ -519,7 +519,7 @@ header .mob-view {
 
 header .container.landing {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
   gap: 20px;
   padding: 30px 50px;
@@ -799,6 +799,12 @@ header .container.landing .right .image {
   position: relative;
 }
 
+@media (max-width: 800px) {
+ header .container.landing .right .image {
+  width: 250px;
+ } 
+}
+
 header .container.landing .right .image img {
   width: 100%;
 }
@@ -812,8 +818,12 @@ header .container.landing .right .image .star {
   animation: rotateStar 4s infinite linear;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   header .container.landing .right .image .star {
+    display: none;
+  }
+
+  header .container.landing .right .image .green-coin {
     display: none;
   }
 }
@@ -838,12 +848,6 @@ header .container.landing .right .image .green-coin {
 
 header .container.landing .right .image .green-coin img {
   width: 100%;
-}
-
-@media (max-width: 700px) {
-  header .container.landing .right .image .green-coin {
-    display: none;
-  }
 }
 
 header .container.landing .right .image .weird {
@@ -954,7 +958,9 @@ header .container.landing .right .image .weird img {
 
 @media(max-width: 1040px) {
   .alex .container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
   }
 }
 
@@ -1365,6 +1371,15 @@ header .container.landing .right .image .weird img {
     width: 100%;
     height: 100%;
     padding: 50px 20px;
+  }
+
+  @media (max-width: 430px) {
+    .alex .container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
   }
 
   .photos>div:nth-child(1) {
@@ -2238,16 +2253,16 @@ footer .container .down .contact .social i:nth-of-type(2) {
     align-items: center;
   }
 
-  footer .container .down .about, 
+  footer .container .down .about,
   footer .container .down .contact {
-    align-items: center; 
+    align-items: center;
   }
 }
 
 @media (max-width: 650px) {
   footer .container .up nav {
     flex-direction: column;
-    gap: 40px;  
+    gap: 40px;
     align-items: center;
   }
 
@@ -2289,22 +2304,23 @@ footer .cpr p span {
   * {
     max-width: 100vw;
   }
-  
-  body, html {
+
+  body,
+  html {
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
   }
-  
+
   .container {
     overflow-x: hidden;
   }
-  
+
   img {
     max-width: 100%;
     height: auto;
   }
-  
+
   .block-chain .container .cards,
   .block-chain .container .cards>div {
     overflow: visible;
@@ -2315,6 +2331,7 @@ footer .cpr p span {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
